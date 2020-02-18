@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_13_111350) do
+ActiveRecord::Schema.define(version: 2020_02_18_053216) do
 
   create_table "users", force: :cascade do |t|
     t.string "provider"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(version: 2020_01_13_111350) do
     t.string "image"
     t.string "oauth_token"
     t.datetime "oauth_expires_at"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string "summary"
+    t.datetime "dtstart"
+    t.datetime "dtend"
+    t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
